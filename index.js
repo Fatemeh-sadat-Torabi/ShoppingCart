@@ -7,7 +7,8 @@ const clearModalBtn = document.querySelector(".cart-clear");
 const productsDom = document.querySelector(".products");
 const cartItemsDom = document.querySelector(".cart-content");
 let cartTotal = document.querySelector(".cart-total");
-const cartItems = document.querySelector(".cart-items");
+let cartItems = document.querySelector(".cart-items");
+
 import {productsData} from "./products.js";
 let cart = [];
 
@@ -18,6 +19,8 @@ class Product{
         return productsData ; 
     }
 }
+
+let buttonsDom = [];
 // Display Product
 class Ui{
     displayProducts(products){
@@ -41,6 +44,8 @@ class Ui{
     getAddToCardBtns(){
         const addToCartBtns = document.querySelectorAll(".inCartBTN");
         const addToCartBtnsArray = [...addToCartBtns];
+        buttonsDom = addToCartBtnsArray;
+
         addToCartBtnsArray.forEach((btn)=>{
             const dataIds = btn.dataset.id;
             // Check if this product id is in cart or not!
@@ -94,12 +99,12 @@ class Ui{
                         <h5>${item.price} $</h5>
                     </div>
                     <div class="cart-item-controller">
-                        <i class="fa-solid fa-angle-up"></i>
+                        <i class="fa-solid fa-angle-up" data-id=${item.id}></i>
                         <p>${item.quantity}</p>
-                        <i class="fa-solid fa-angle-down"></i>
+                        <i class="fa-solid fa-angle-down" data-id=${item.id}></i>
                     </div>
                     <div class="remove-item">
-                        <i class="fa-solid fa-trash-alt"></i>
+                        <i class="fa-solid fa-trash-alt" data-id=${item.id}></i>
                     </div>        
         `
         cartItemsDom.appendChild(cartItemsDiv);
@@ -116,7 +121,58 @@ class Ui{
         // clear cart:
         clearModalBtn.addEventListener("click",()=>{
             // Remove
+            console.log("Clear!");
             cart.forEach(item => this.removeItem(item.id));
+            while(cartItemsDom.children.length){
+                cartItemsDom.removeChild(cartItemsDom.children[0]);
+            };
+            closeCart();
+        });
+        //cart functionality:
+        cartItemsDom.addEventListener('click', (event)=>{
+            console.log(event.target);
+            if(event.target.classList.contains("fa-angle-up")){
+                console.log(event.target.dataset.id);
+                const addQuantity = event.target;
+                // Get item from cart
+                const addedItem = cart.find( cItem => cItem.id == parseInt(addQuantity.dataset.id) );
+                // update cart value
+                addedItem.quantity ++;
+                this.setCartValue(cart);
+                // Save cart 
+                Storage.saveCart(cart);
+                // Update Cart Item in UI: 
+                addQuantity.nextElementSibling.innerText = addedItem.quantity;
+            }else if(event.target.classList.contains("fa-trash-alt")){
+                const removeItem = event.target;
+                // Remove from cart
+                const _removedItem = cart.find( c => c.id == removeItem.dataset.id);
+                this.removeItem(_removedItem.id);
+                Storage.saveCart(cart);
+                cartItemsDom.removeChild(removeItem.parentElement.parentElement);
+
+                // Update local storage
+
+                // Call remove Method
+
+            }else if(event.target.classList.contains("fa-angle-down")){
+                console.log(event.target.dataset.id);
+                const subQuantity = event.target;
+                // Get item from cart
+                const subtractedItem = cart.find( cItem => cItem.id == parseInt(subQuantity.dataset.id) );
+                // update cart value
+                if (subtractedItem.quantity === 1){
+                    this.removeItem(subtractedItem.id);
+                    cartItemsDom.removeChild(subQuantity.parentElement.parentElement);
+                    return;
+                }
+                subtractedItem.quantity --;
+                this.setCartValue(cart);
+                // Save cart 
+                Storage.saveCart(cart);
+                // Update Cart Item in UI: 
+                subQuantity.previousElementSibling.innerText = subtractedItem.quantity;
+            }
         })
     }
     removeItem(id){
@@ -126,10 +182,26 @@ class Ui{
         this.setCartValue(cart);
         // update Storage
         Storage.saveCart(cart);
-        
+
+        // Get add-to-card buttons and update their text and disables :
+        console.log("buttonsDom is:")
+        console.log(buttonsDom);
+        const button = buttonsDom.find(btn => btn.dataset.id == parseInt(id));
+        console.log("button is : ")
+        console.log(button);
+        button.innerText = 'Add To Card';
+        buttonsDom.disabled = false;
+        console.log(buttonsDom);
+    
+    
+    }    
     }
     
-}
+        
+        
+    
+    
+
 // Local Storage
 class Storage{
     static saveProducts(products){
