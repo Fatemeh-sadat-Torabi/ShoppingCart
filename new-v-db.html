@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+        <header class="site-header">
+            <div class="header-icon">
+                <i class="fa-solid fa-bars"></i> 
+            </div>
+            <h4>
+                Online Shop
+            </h4>
+            <div class="header-icon">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <div class="cart-items"></div>
+            </div>    
+        </header>
+        <h1 class="pageTitle">Our Products</h1>
+        <div class="filter">
+            <h3>Product Filter</h3>
+            <input type="text" placeholder="filter products .." id="filterItems" >
+            <section class="filterButtons">
+                <a class="btn-groups" data-filter="">All</a>
+                <a class="btn-groups" data-filter="Shoes">Shoes</a>
+                <a class="btn-groups" data-filter="Watch">Watch</a>
+                <a class="btn-groups" data-filter="Shirt">T-shirt</a>
+            </section>
+        </div>
+        <section class="products">
+            <!-- <article class="product">
+                <img class="product-img" src="./assets/images/maksim-larin-ezdrvzA1hZw-unsplash.jpg" alt="">
+                <div class="product-content">
+                    <div class="product-description">
+                        <p class="price">10.99 &pound;</p>
+                        <p class="name">Balance Sneaker Shoe</p>
+                    </div>
+                    <button class="inCartBTN">Add To Cart</button>
+                </div>
+            </article> -->
+        </section>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="./new-v-db.js"></script>
+</body>
+</html>

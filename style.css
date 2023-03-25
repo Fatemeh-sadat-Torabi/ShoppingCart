@@ -3,7 +3,12 @@
     width: 100vw;
     height: 100vh;
 }
+:root{
+    --primary-color : lightpink;
+    --secondary-color: rgb(255, 128, 149);
+}
 .site-header{
+
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -11,11 +16,58 @@
     margin-top: 5px;
     background-color: lightpink;
     border-radius: 8px;
+    /* z-index: 10; */
 }
 .header-icon{
     padding-top: 20px;
     margin-left: 10px;
     margin-right: 10px;
+}
+
+.filter{
+    position: sticky;
+    top: 0;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+.filter input{
+    width: 34%;
+    
+}
+#filterItems{
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    padding: 0.45rem;
+    background-color: var(--primary-color);
+}
+#filterItems:focus{
+    border: 3px solid var(--secondary-color);
+}
+.filterButtons{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 1rem;
+    width: 50%;
+}
+.filterButtons a{
+    text-decoration: none;
+    padding: 0.5rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    font-weight: bold;
+    color: var(--secondary-color);
+
+}
+.filterButtons a:hover{
+    background-color: var(--secondary-color);
+    color: #fff;
 }
 .product-img{
     width: 250px;

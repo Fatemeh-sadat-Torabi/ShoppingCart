@@ -1,0 +1,132 @@
+{
+"items":[
+    {
+        "id":1 ,
+        "title":"Balance Sneaker Shoe" ,
+        "class": "shoes",
+        "price":34.99 ,
+        "imageURL":"./assets/images/maksim-larin-ezdrvzA1hZw-unsplash.jpg" 
+    },
+    {
+        "id":2 ,
+        "title":"Nike Sneaker Shoe" ,
+        "class": "shoes",
+        "price":43.99 ,
+        "imageURL":"./assets/images/maksim-larin-NOpsC3nWTzY-unsplash.jpg" 
+    },
+    {
+        "id":3 ,
+        "title":"Nike Air Max Shoe" ,
+        "class": "shoes",
+        "price":27.99 ,
+        "imageURL":"./assets/images/omar-prestwich-jLEGurepDco-unsplash.jpg" 
+    },
+    {
+        "id":4 ,
+        "title":"Nike Air Force Shoe" ,
+        "class": "shoes",
+        "price":17.99 ,
+        "imageURL":"./assets/images/trendest-studio-XZ3EmAIWuz0-unsplash.jpg" 
+    },
+    {
+        "id":5 ,
+        "title":"Air Jordan Shoe" ,
+        "class": "shoes",
+        "price":67.99 ,
+        "imageURL":"./assets/images/wengang-zhai-_fOL6ebfECQ-unsplash.jpg" 
+    },
+    {
+        "id":6 ,
+        "title":"Nike Air Force Shoe" ,
+        "class": "shoes",
+        "price":25.99 ,
+        "imageURL":"./assets/images/ryan-plomp-jvoZ-Aux9aw-unsplash.jpg" 
+    },
+    {
+        "id":7 ,
+        "title":"Nike Running Shoe" ,
+        "class": "shoes",
+        "price":25.99 ,
+        "imageURL":"./assets/images/joseph-barrientos-4qSb_FWhHKs-unsplash.jpg" 
+    },
+    {
+        "id":8 ,
+        "title":"Nike Sneakers" ,
+        "class": "shoes",
+        "price":25.99 ,
+        "imageURL":"./assets/images/revolt-164_6wVEHfI-unsplash.jpg" 
+    },
+    {
+        "id":9 ,
+        "title":"Men Watch" ,
+        "class": "watch",
+        "price":130.99 ,
+        "imageURL":"./assets/images/watch-1.jpg" 
+    },
+    {
+        "id":10 ,
+        "title":"Men Watch" ,
+        "class": "watch",
+        "price":330.99 ,
+        "imageURL":"./assets/images/watch-2.jpg" 
+    },
+    {
+        "id":11 ,
+        "title":"Men Watch" ,
+        "class": "watch",
+        "price":230.99 ,
+        "imageURL":"./assets/images/watch-3.jpg" 
+    },
+    {
+        "id":12 ,
+        "title":"Men Watch" ,
+        "class": "watch",
+        "price":160.99 ,
+        "imageURL":"./assets/images/watch-4.jpg" 
+    },
+    {
+        "id":13 ,
+        "title":"Men Watch" ,
+        "class": "watch",
+        "price":1070.99 ,
+        "imageURL":"./assets/images/watch-5.jpg" 
+    },
+    {
+        "id":14 ,
+        "title":"Men Shirt" ,
+        "class": "shirt",
+        "price":33.99 ,
+        "imageURL":"./assets/images/shirt-1.jpg" 
+    },
+    {
+        "id":15 ,
+        "title":"Men Shirt" ,
+        "class": "shirt",
+        "price":17.99 ,
+        "imageURL":"./assets/images/shirt-2.jpg" 
+    },
+    {
+        "id":16 ,
+        "title":"Men Shirt" ,
+        "class": "shirt",
+        "price":23.99 ,
+        "imageURL":"./assets/images/shirt-3.jpg" 
+    },
+    {
+        "id":17 ,
+        "title":"Men Shirt" ,
+        "class": "shirt",
+        "price":53.99 ,
+        "imageURL":"./assets/images/shirt-4.jpg" 
+    },
+    {
+        "id":14 ,
+        "title":"Men Shirt" ,
+        "class": "shirt",
+        "price":18 ,
+        "imageURL":"./assets/images/shirt-5.jpg" 
+    }
+
+]
+
+} 
